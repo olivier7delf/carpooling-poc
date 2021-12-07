@@ -1,0 +1,1089 @@
+{
+  "contractName": "CarpoolingFactory",
+  "abi": [
+    {
+      "inputs": [],
+      "payable": false,
+      "stateMutability": "nonpayable",
+      "type": "constructor"
+    },
+    {
+      "constant": true,
+      "inputs": [],
+      "name": "admin",
+      "outputs": [
+        {
+          "internalType": "address",
+          "name": "",
+          "type": "address"
+        }
+      ],
+      "payable": false,
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "constant": true,
+      "inputs": [
+        {
+          "internalType": "uint256",
+          "name": "",
+          "type": "uint256"
+        }
+      ],
+      "name": "carpoolings",
+      "outputs": [
+        {
+          "internalType": "contract Carpooling",
+          "name": "",
+          "type": "address"
+        }
+      ],
+      "payable": false,
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "constant": false,
+      "inputs": [
+        {
+          "internalType": "string",
+          "name": "_origin",
+          "type": "string"
+        },
+        {
+          "internalType": "string",
+          "name": "_destination",
+          "type": "string"
+        },
+        {
+          "internalType": "uint8",
+          "name": "_nSlot",
+          "type": "uint8"
+        },
+        {
+          "internalType": "uint8",
+          "name": "price",
+          "type": "uint8"
+        },
+        {
+          "internalType": "uint256",
+          "name": "startTime",
+          "type": "uint256"
+        },
+        {
+          "internalType": "address payable",
+          "name": "_conflictOwner",
+          "type": "address"
+        },
+        {
+          "internalType": "enum CarpoolingFactory.ModeConflict",
+          "name": "_modeConflict",
+          "type": "uint8"
+        }
+      ],
+      "name": "createCarpooling",
+      "outputs": [],
+      "payable": false,
+      "stateMutability": "nonpayable",
+      "type": "function"
+    }
+  ],
+  "metadata": "{\"compiler\":{\"version\":\"0.5.16+commit.9c3226ce\"},\"language\":\"Solidity\",\"output\":{\"abi\":[{\"inputs\":[],\"payable\":false,\"stateMutability\":\"nonpayable\",\"type\":\"constructor\"},{\"constant\":true,\"inputs\":[],\"name\":\"admin\",\"outputs\":[{\"internalType\":\"address\",\"name\":\"\",\"type\":\"address\"}],\"payable\":false,\"stateMutability\":\"view\",\"type\":\"function\"},{\"constant\":true,\"inputs\":[{\"internalType\":\"uint256\",\"name\":\"\",\"type\":\"uint256\"}],\"name\":\"carpoolings\",\"outputs\":[{\"internalType\":\"contract Carpooling\",\"name\":\"\",\"type\":\"address\"}],\"payable\":false,\"stateMutability\":\"view\",\"type\":\"function\"},{\"constant\":false,\"inputs\":[{\"internalType\":\"string\",\"name\":\"_origin\",\"type\":\"string\"},{\"internalType\":\"string\",\"name\":\"_destination\",\"type\":\"string\"},{\"internalType\":\"uint8\",\"name\":\"_nSlot\",\"type\":\"uint8\"},{\"internalType\":\"uint8\",\"name\":\"price\",\"type\":\"uint8\"},{\"internalType\":\"uint256\",\"name\":\"startTime\",\"type\":\"uint256\"},{\"internalType\":\"address payable\",\"name\":\"_conflictOwner\",\"type\":\"address\"},{\"internalType\":\"enum CarpoolingFactory.ModeConflict\",\"name\":\"_modeConflict\",\"type\":\"uint8\"}],\"name\":\"createCarpooling\",\"outputs\":[],\"payable\":false,\"stateMutability\":\"nonpayable\",\"type\":\"function\"}],\"devdoc\":{\"methods\":{}},\"userdoc\":{\"methods\":{}}},\"settings\":{\"compilationTarget\":{\"project:/contracts/CarpoolingFactory.sol\":\"CarpoolingFactory\"},\"evmVersion\":\"istanbul\",\"libraries\":{},\"optimizer\":{\"enabled\":false,\"runs\":200},\"remappings\":[]},\"sources\":{\"project:/contracts/Carpooling.sol\":{\"keccak256\":\"0x88feee0bc03d9a25d3ec3b59f322fd08fd6e7216030ef3cfe2699b4648f11935\",\"urls\":[\"bzz-raw://73231bb17b5f3dbfc99e075a84b0f084fcaf0ded6d9dbbcdf130b8a74976e0e5\",\"dweb:/ipfs/QmcVLu9HzEgmde2JYVg4HgCGnRjt6WeoAww9Na7g2rSLHa\"]},\"project:/contracts/CarpoolingFactory.sol\":{\"keccak256\":\"0x027831790058e703edcfd03cfa1cefe65f5f6cc9de05af5ead569bdaefb44b32\",\"urls\":[\"bzz-raw://2cf4185422fa8781c88ab7cae6f21d7addf26020378e714e3ea3191818819348\",\"dweb:/ipfs/QmR2uPox9HyrPfxTVatLLNbvdA63bm1hh4V5dF2aJWczCa\"]},\"project:/contracts/ERC20_s5.sol\":{\"keccak256\":\"0xf75007c74401a9b8a4acfefb65ab3dea6a469c74a074f12ac5473f51fb83d8f9\",\"urls\":[\"bzz-raw://a63b9fffa46a2cf41c48853add69ff5712302dcbe52ecc8f1bf34f9ebd154f69\",\"dweb:/ipfs/QmUQiLTKUytofCPKkCjk713BvCgi182r2yfhE82TFtMBq9\"]}},\"version\":1}",
+  "bytecode": "0x608060405234801561001057600080fd5b50336000806101000a81548173ffffffffffffffffffffffffffffffffffffffff021916908373ffffffffffffffffffffffffffffffffffffffff160217905550610340806100606000396000f3fe608060405234801561001057600080fd5b50600436106100415760003560e01c80632a1349ac146100465780639d4a727e146100b4578063f851a44014610257575b600080fd5b6100726004803603602081101561005c57600080fd5b81019080803590602001909291905050506102a1565b604051808273ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff16815260200191505060405180910390f35b610255600480360360e08110156100ca57600080fd5b81019080803590602001906401000000008111156100e757600080fd5b8201836020820111156100f957600080fd5b8035906020019184600183028401116401000000008311171561011b57600080fd5b91908080601f016020809104026020016040519081016040528093929190818152602001838380828437600081840152601f19601f8201169050808301925050505050505091929192908035906020019064010000000081111561017e57600080fd5b82018360208201111561019057600080fd5b803590602001918460018302840111640100000000831117156101b257600080fd5b91908080601f016020809104026020016040519081016040528093929190818152602001838380828437600081840152601f19601f820116905080830192505050505050509192919290803560ff169060200190929190803560ff16906020019092919080359060200190929190803573ffffffffffffffffffffffffffffffffffffffff169060200190929190803560ff1690602001909291905050506102dd565b005b61025f6102e6565b604051808273ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff16815260200191505060405180910390f35b600181815481106102ae57fe5b906000526020600020016000915054906101000a900473ffffffffffffffffffffffffffffffffffffffff1681565b50505050505050565b6000809054906101000a900473ffffffffffffffffffffffffffffffffffffffff168156fea265627a7a723158208c0a7e5aed4955ff84fb0439ff146831906e1583435dbf7430e953b7e9884a8564736f6c63430005100032",
+  "deployedBytecode": "0x608060405234801561001057600080fd5b50600436106100415760003560e01c80632a1349ac146100465780639d4a727e146100b4578063f851a44014610257575b600080fd5b6100726004803603602081101561005c57600080fd5b81019080803590602001909291905050506102a1565b604051808273ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff16815260200191505060405180910390f35b610255600480360360e08110156100ca57600080fd5b81019080803590602001906401000000008111156100e757600080fd5b8201836020820111156100f957600080fd5b8035906020019184600183028401116401000000008311171561011b57600080fd5b91908080601f016020809104026020016040519081016040528093929190818152602001838380828437600081840152601f19601f8201169050808301925050505050505091929192908035906020019064010000000081111561017e57600080fd5b82018360208201111561019057600080fd5b803590602001918460018302840111640100000000831117156101b257600080fd5b91908080601f016020809104026020016040519081016040528093929190818152602001838380828437600081840152601f19601f820116905080830192505050505050509192919290803560ff169060200190929190803560ff16906020019092919080359060200190929190803573ffffffffffffffffffffffffffffffffffffffff169060200190929190803560ff1690602001909291905050506102dd565b005b61025f6102e6565b604051808273ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff16815260200191505060405180910390f35b600181815481106102ae57fe5b906000526020600020016000915054906101000a900473ffffffffffffffffffffffffffffffffffffffff1681565b50505050505050565b6000809054906101000a900473ffffffffffffffffffffffffffffffffffffffff168156fea265627a7a723158208c0a7e5aed4955ff84fb0439ff146831906e1583435dbf7430e953b7e9884a8564736f6c63430005100032",
+  "sourceMap": "87:540:2:-;;;233:56;8:9:-1;5:2;;;30:1;27;20:12;5:2;233:56:2;272:10;264:5;;:18;;;;;;;;;;;;;;;;;;87:540;;;;;;",
+  "deployedSourceMap": "87:540:2:-;;;;8:9:-1;5:2;;;30:1;27;20:12;5:2;87:540:2;;;;;;;;;;;;;;;;;;;;;;;;;;;;;146:31;;;;;;13:2:-1;8:3;5:11;2:2;;;29:1;26;19:12;2:2;146:31:2;;;;;;;;;;;;;;;;;:::i;:::-;;;;;;;;;;;;;;;;;;;;;;;295:330;;;;;;13:3:-1;8;5:12;2:2;;;30:1;27;20:12;2:2;295:330:2;;;;;;;;;;21:11:-1;8;5:28;2:2;;;46:1;43;36:12;2:2;295:330:2;;35:9:-1;28:4;12:14;8:25;5:40;2:2;;;58:1;55;48:12;2:2;295:330:2;;;;;;100:9:-1;95:1;81:12;77:20;67:8;63:35;60:50;39:11;25:12;22:29;11:107;8:2;;;131:1;128;121:12;8:2;295:330:2;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;30:3:-1;22:6;14;1:33;99:1;93:3;85:6;81:16;74:27;137:4;133:9;126:4;121:3;117:14;113:30;106:37;;169:3;161:6;157:16;147:26;;295:330:2;;;;;;;;;;;;;;;;;21:11:-1;8;5:28;2:2;;;46:1;43;36:12;2:2;295:330:2;;35:9:-1;28:4;12:14;8:25;5:40;2:2;;;58:1;55;48:12;2:2;295:330:2;;;;;;100:9:-1;95:1;81:12;77:20;67:8;63:35;60:50;39:11;25:12;22:29;11:107;8:2;;;131:1;128;121:12;8:2;295:330:2;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;30:3:-1;22:6;14;1:33;99:1;93:3;85:6;81:16;74:27;137:4;133:9;126:4;121:3;117:14;113:30;106:37;;169:3;161:6;157:16;147:26;;295:330:2;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;:::i;:::-;;120:20;;;:::i;:::-;;;;;;;;;;;;;;;;;;;;;;;146:31;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;:::o;295:330::-;;;;;;;;:::o;120:20::-;;;;;;;;;;;;;:::o",
+  "source": "// SPDX-License-Identifier: MIT\npragma solidity = 0.5.16;\n\nimport \"./Carpooling.sol\";\n\ncontract CarpoolingFactory {\n    address public admin;\n    Carpooling[] public carpoolings;\n    enum ModeConflict{normal, tyranic, generous}\n\n    constructor() public {\n        admin = msg.sender;\n    }\n\n    function createCarpooling(string memory _origin, string memory _destination, uint8 _nSlot, uint8 price, uint256 startTime,address payable _conflictOwner, ModeConflict _modeConflict) public {\n        // Carpooling newCarpooling = new Carpooling(_origin, _destination, _nSlot, price, startTime, _conflictOwner, _modeConflict);\n    }\n}",
+  "sourcePath": "/Users/olivier/Documents/code/olivier7delf/carpooling-v1 copy/contracts/CarpoolingFactory.sol",
+  "ast": {
+    "absolutePath": "project:/contracts/CarpoolingFactory.sol",
+    "exportedSymbols": {
+      "CarpoolingFactory": [
+        1269
+      ]
+    },
+    "id": 1270,
+    "nodeType": "SourceUnit",
+    "nodes": [
+      {
+        "id": 1231,
+        "literals": [
+          "solidity",
+          "=",
+          "0.5",
+          ".16"
+        ],
+        "nodeType": "PragmaDirective",
+        "src": "32:25:2"
+      },
+      {
+        "absolutePath": "project:/contracts/Carpooling.sol",
+        "file": "./Carpooling.sol",
+        "id": 1232,
+        "nodeType": "ImportDirective",
+        "scope": 1270,
+        "sourceUnit": 1230,
+        "src": "59:26:2",
+        "symbolAliases": [],
+        "unitAlias": ""
+      },
+      {
+        "baseContracts": [],
+        "contractDependencies": [],
+        "contractKind": "contract",
+        "documentation": null,
+        "fullyImplemented": true,
+        "id": 1269,
+        "linearizedBaseContracts": [
+          1269
+        ],
+        "name": "CarpoolingFactory",
+        "nodeType": "ContractDefinition",
+        "nodes": [
+          {
+            "constant": false,
+            "id": 1234,
+            "name": "admin",
+            "nodeType": "VariableDeclaration",
+            "scope": 1269,
+            "src": "120:20:2",
+            "stateVariable": true,
+            "storageLocation": "default",
+            "typeDescriptions": {
+              "typeIdentifier": "t_address",
+              "typeString": "address"
+            },
+            "typeName": {
+              "id": 1233,
+              "name": "address",
+              "nodeType": "ElementaryTypeName",
+              "src": "120:7:2",
+              "stateMutability": "nonpayable",
+              "typeDescriptions": {
+                "typeIdentifier": "t_address",
+                "typeString": "address"
+              }
+            },
+            "value": null,
+            "visibility": "public"
+          },
+          {
+            "constant": false,
+            "id": 1237,
+            "name": "carpoolings",
+            "nodeType": "VariableDeclaration",
+            "scope": 1269,
+            "src": "146:31:2",
+            "stateVariable": true,
+            "storageLocation": "default",
+            "typeDescriptions": {
+              "typeIdentifier": "t_array$_t_contract$_Carpooling_$1229_$dyn_storage",
+              "typeString": "contract Carpooling[]"
+            },
+            "typeName": {
+              "baseType": {
+                "contractScope": null,
+                "id": 1235,
+                "name": "Carpooling",
+                "nodeType": "UserDefinedTypeName",
+                "referencedDeclaration": 1229,
+                "src": "146:10:2",
+                "typeDescriptions": {
+                  "typeIdentifier": "t_contract$_Carpooling_$1229",
+                  "typeString": "contract Carpooling"
+                }
+              },
+              "id": 1236,
+              "length": null,
+              "nodeType": "ArrayTypeName",
+              "src": "146:12:2",
+              "typeDescriptions": {
+                "typeIdentifier": "t_array$_t_contract$_Carpooling_$1229_$dyn_storage_ptr",
+                "typeString": "contract Carpooling[]"
+              }
+            },
+            "value": null,
+            "visibility": "public"
+          },
+          {
+            "canonicalName": "CarpoolingFactory.ModeConflict",
+            "id": 1241,
+            "members": [
+              {
+                "id": 1238,
+                "name": "normal",
+                "nodeType": "EnumValue",
+                "src": "201:6:2"
+              },
+              {
+                "id": 1239,
+                "name": "tyranic",
+                "nodeType": "EnumValue",
+                "src": "209:7:2"
+              },
+              {
+                "id": 1240,
+                "name": "generous",
+                "nodeType": "EnumValue",
+                "src": "218:8:2"
+              }
+            ],
+            "name": "ModeConflict",
+            "nodeType": "EnumDefinition",
+            "src": "183:44:2"
+          },
+          {
+            "body": {
+              "id": 1249,
+              "nodeType": "Block",
+              "src": "254:35:2",
+              "statements": [
+                {
+                  "expression": {
+                    "argumentTypes": null,
+                    "id": 1247,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "lValueRequested": false,
+                    "leftHandSide": {
+                      "argumentTypes": null,
+                      "id": 1244,
+                      "name": "admin",
+                      "nodeType": "Identifier",
+                      "overloadedDeclarations": [],
+                      "referencedDeclaration": 1234,
+                      "src": "264:5:2",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_address",
+                        "typeString": "address"
+                      }
+                    },
+                    "nodeType": "Assignment",
+                    "operator": "=",
+                    "rightHandSide": {
+                      "argumentTypes": null,
+                      "expression": {
+                        "argumentTypes": null,
+                        "id": 1245,
+                        "name": "msg",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 1353,
+                        "src": "272:3:2",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_magic_message",
+                          "typeString": "msg"
+                        }
+                      },
+                      "id": 1246,
+                      "isConstant": false,
+                      "isLValue": false,
+                      "isPure": false,
+                      "lValueRequested": false,
+                      "memberName": "sender",
+                      "nodeType": "MemberAccess",
+                      "referencedDeclaration": null,
+                      "src": "272:10:2",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_address_payable",
+                        "typeString": "address payable"
+                      }
+                    },
+                    "src": "264:18:2",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address",
+                      "typeString": "address"
+                    }
+                  },
+                  "id": 1248,
+                  "nodeType": "ExpressionStatement",
+                  "src": "264:18:2"
+                }
+              ]
+            },
+            "documentation": null,
+            "id": 1250,
+            "implemented": true,
+            "kind": "constructor",
+            "modifiers": [],
+            "name": "",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 1242,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "244:2:2"
+            },
+            "returnParameters": {
+              "id": 1243,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "254:0:2"
+            },
+            "scope": 1269,
+            "src": "233:56:2",
+            "stateMutability": "nonpayable",
+            "superFunction": null,
+            "visibility": "public"
+          },
+          {
+            "body": {
+              "id": 1267,
+              "nodeType": "Block",
+              "src": "484:141:2",
+              "statements": []
+            },
+            "documentation": null,
+            "id": 1268,
+            "implemented": true,
+            "kind": "function",
+            "modifiers": [],
+            "name": "createCarpooling",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 1265,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 1252,
+                  "name": "_origin",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 1268,
+                  "src": "321:21:2",
+                  "stateVariable": false,
+                  "storageLocation": "memory",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_string_memory_ptr",
+                    "typeString": "string"
+                  },
+                  "typeName": {
+                    "id": 1251,
+                    "name": "string",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "321:6:2",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_string_storage_ptr",
+                      "typeString": "string"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 1254,
+                  "name": "_destination",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 1268,
+                  "src": "344:26:2",
+                  "stateVariable": false,
+                  "storageLocation": "memory",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_string_memory_ptr",
+                    "typeString": "string"
+                  },
+                  "typeName": {
+                    "id": 1253,
+                    "name": "string",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "344:6:2",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_string_storage_ptr",
+                      "typeString": "string"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 1256,
+                  "name": "_nSlot",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 1268,
+                  "src": "372:12:2",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint8",
+                    "typeString": "uint8"
+                  },
+                  "typeName": {
+                    "id": 1255,
+                    "name": "uint8",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "372:5:2",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint8",
+                      "typeString": "uint8"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 1258,
+                  "name": "price",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 1268,
+                  "src": "386:11:2",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint8",
+                    "typeString": "uint8"
+                  },
+                  "typeName": {
+                    "id": 1257,
+                    "name": "uint8",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "386:5:2",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint8",
+                      "typeString": "uint8"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 1260,
+                  "name": "startTime",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 1268,
+                  "src": "399:17:2",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  },
+                  "typeName": {
+                    "id": 1259,
+                    "name": "uint256",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "399:7:2",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 1262,
+                  "name": "_conflictOwner",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 1268,
+                  "src": "417:30:2",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_address_payable",
+                    "typeString": "address payable"
+                  },
+                  "typeName": {
+                    "id": 1261,
+                    "name": "address",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "417:15:2",
+                    "stateMutability": "payable",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address_payable",
+                      "typeString": "address payable"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 1264,
+                  "name": "_modeConflict",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 1268,
+                  "src": "449:26:2",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_enum$_ModeConflict_$1241",
+                    "typeString": "enum CarpoolingFactory.ModeConflict"
+                  },
+                  "typeName": {
+                    "contractScope": null,
+                    "id": 1263,
+                    "name": "ModeConflict",
+                    "nodeType": "UserDefinedTypeName",
+                    "referencedDeclaration": 1241,
+                    "src": "449:12:2",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_enum$_ModeConflict_$1241",
+                      "typeString": "enum CarpoolingFactory.ModeConflict"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "320:156:2"
+            },
+            "returnParameters": {
+              "id": 1266,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "484:0:2"
+            },
+            "scope": 1269,
+            "src": "295:330:2",
+            "stateMutability": "nonpayable",
+            "superFunction": null,
+            "visibility": "public"
+          }
+        ],
+        "scope": 1270,
+        "src": "87:540:2"
+      }
+    ],
+    "src": "32:595:2"
+  },
+  "legacyAST": {
+    "attributes": {
+      "absolutePath": "project:/contracts/CarpoolingFactory.sol",
+      "exportedSymbols": {
+        "CarpoolingFactory": [
+          1269
+        ]
+      }
+    },
+    "children": [
+      {
+        "attributes": {
+          "literals": [
+            "solidity",
+            "=",
+            "0.5",
+            ".16"
+          ]
+        },
+        "id": 1231,
+        "name": "PragmaDirective",
+        "src": "32:25:2"
+      },
+      {
+        "attributes": {
+          "SourceUnit": 1230,
+          "absolutePath": "project:/contracts/Carpooling.sol",
+          "file": "./Carpooling.sol",
+          "scope": 1270,
+          "symbolAliases": [
+            null
+          ],
+          "unitAlias": ""
+        },
+        "id": 1232,
+        "name": "ImportDirective",
+        "src": "59:26:2"
+      },
+      {
+        "attributes": {
+          "baseContracts": [
+            null
+          ],
+          "contractDependencies": [
+            null
+          ],
+          "contractKind": "contract",
+          "documentation": null,
+          "fullyImplemented": true,
+          "linearizedBaseContracts": [
+            1269
+          ],
+          "name": "CarpoolingFactory",
+          "scope": 1270
+        },
+        "children": [
+          {
+            "attributes": {
+              "constant": false,
+              "name": "admin",
+              "scope": 1269,
+              "stateVariable": true,
+              "storageLocation": "default",
+              "type": "address",
+              "value": null,
+              "visibility": "public"
+            },
+            "children": [
+              {
+                "attributes": {
+                  "name": "address",
+                  "stateMutability": "nonpayable",
+                  "type": "address"
+                },
+                "id": 1233,
+                "name": "ElementaryTypeName",
+                "src": "120:7:2"
+              }
+            ],
+            "id": 1234,
+            "name": "VariableDeclaration",
+            "src": "120:20:2"
+          },
+          {
+            "attributes": {
+              "constant": false,
+              "name": "carpoolings",
+              "scope": 1269,
+              "stateVariable": true,
+              "storageLocation": "default",
+              "type": "contract Carpooling[]",
+              "value": null,
+              "visibility": "public"
+            },
+            "children": [
+              {
+                "attributes": {
+                  "length": null,
+                  "type": "contract Carpooling[]"
+                },
+                "children": [
+                  {
+                    "attributes": {
+                      "contractScope": null,
+                      "name": "Carpooling",
+                      "referencedDeclaration": 1229,
+                      "type": "contract Carpooling"
+                    },
+                    "id": 1235,
+                    "name": "UserDefinedTypeName",
+                    "src": "146:10:2"
+                  }
+                ],
+                "id": 1236,
+                "name": "ArrayTypeName",
+                "src": "146:12:2"
+              }
+            ],
+            "id": 1237,
+            "name": "VariableDeclaration",
+            "src": "146:31:2"
+          },
+          {
+            "attributes": {
+              "canonicalName": "CarpoolingFactory.ModeConflict",
+              "name": "ModeConflict"
+            },
+            "children": [
+              {
+                "attributes": {
+                  "name": "normal"
+                },
+                "id": 1238,
+                "name": "EnumValue",
+                "src": "201:6:2"
+              },
+              {
+                "attributes": {
+                  "name": "tyranic"
+                },
+                "id": 1239,
+                "name": "EnumValue",
+                "src": "209:7:2"
+              },
+              {
+                "attributes": {
+                  "name": "generous"
+                },
+                "id": 1240,
+                "name": "EnumValue",
+                "src": "218:8:2"
+              }
+            ],
+            "id": 1241,
+            "name": "EnumDefinition",
+            "src": "183:44:2"
+          },
+          {
+            "attributes": {
+              "documentation": null,
+              "implemented": true,
+              "isConstructor": true,
+              "kind": "constructor",
+              "modifiers": [
+                null
+              ],
+              "name": "",
+              "scope": 1269,
+              "stateMutability": "nonpayable",
+              "superFunction": null,
+              "visibility": "public"
+            },
+            "children": [
+              {
+                "attributes": {
+                  "parameters": [
+                    null
+                  ]
+                },
+                "children": [],
+                "id": 1242,
+                "name": "ParameterList",
+                "src": "244:2:2"
+              },
+              {
+                "attributes": {
+                  "parameters": [
+                    null
+                  ]
+                },
+                "children": [],
+                "id": 1243,
+                "name": "ParameterList",
+                "src": "254:0:2"
+              },
+              {
+                "children": [
+                  {
+                    "children": [
+                      {
+                        "attributes": {
+                          "argumentTypes": null,
+                          "isConstant": false,
+                          "isLValue": false,
+                          "isPure": false,
+                          "lValueRequested": false,
+                          "operator": "=",
+                          "type": "address"
+                        },
+                        "children": [
+                          {
+                            "attributes": {
+                              "argumentTypes": null,
+                              "overloadedDeclarations": [
+                                null
+                              ],
+                              "referencedDeclaration": 1234,
+                              "type": "address",
+                              "value": "admin"
+                            },
+                            "id": 1244,
+                            "name": "Identifier",
+                            "src": "264:5:2"
+                          },
+                          {
+                            "attributes": {
+                              "argumentTypes": null,
+                              "isConstant": false,
+                              "isLValue": false,
+                              "isPure": false,
+                              "lValueRequested": false,
+                              "member_name": "sender",
+                              "referencedDeclaration": null,
+                              "type": "address payable"
+                            },
+                            "children": [
+                              {
+                                "attributes": {
+                                  "argumentTypes": null,
+                                  "overloadedDeclarations": [
+                                    null
+                                  ],
+                                  "referencedDeclaration": 1353,
+                                  "type": "msg",
+                                  "value": "msg"
+                                },
+                                "id": 1245,
+                                "name": "Identifier",
+                                "src": "272:3:2"
+                              }
+                            ],
+                            "id": 1246,
+                            "name": "MemberAccess",
+                            "src": "272:10:2"
+                          }
+                        ],
+                        "id": 1247,
+                        "name": "Assignment",
+                        "src": "264:18:2"
+                      }
+                    ],
+                    "id": 1248,
+                    "name": "ExpressionStatement",
+                    "src": "264:18:2"
+                  }
+                ],
+                "id": 1249,
+                "name": "Block",
+                "src": "254:35:2"
+              }
+            ],
+            "id": 1250,
+            "name": "FunctionDefinition",
+            "src": "233:56:2"
+          },
+          {
+            "attributes": {
+              "documentation": null,
+              "implemented": true,
+              "isConstructor": false,
+              "kind": "function",
+              "modifiers": [
+                null
+              ],
+              "name": "createCarpooling",
+              "scope": 1269,
+              "stateMutability": "nonpayable",
+              "superFunction": null,
+              "visibility": "public"
+            },
+            "children": [
+              {
+                "children": [
+                  {
+                    "attributes": {
+                      "constant": false,
+                      "name": "_origin",
+                      "scope": 1268,
+                      "stateVariable": false,
+                      "storageLocation": "memory",
+                      "type": "string",
+                      "value": null,
+                      "visibility": "internal"
+                    },
+                    "children": [
+                      {
+                        "attributes": {
+                          "name": "string",
+                          "type": "string"
+                        },
+                        "id": 1251,
+                        "name": "ElementaryTypeName",
+                        "src": "321:6:2"
+                      }
+                    ],
+                    "id": 1252,
+                    "name": "VariableDeclaration",
+                    "src": "321:21:2"
+                  },
+                  {
+                    "attributes": {
+                      "constant": false,
+                      "name": "_destination",
+                      "scope": 1268,
+                      "stateVariable": false,
+                      "storageLocation": "memory",
+                      "type": "string",
+                      "value": null,
+                      "visibility": "internal"
+                    },
+                    "children": [
+                      {
+                        "attributes": {
+                          "name": "string",
+                          "type": "string"
+                        },
+                        "id": 1253,
+                        "name": "ElementaryTypeName",
+                        "src": "344:6:2"
+                      }
+                    ],
+                    "id": 1254,
+                    "name": "VariableDeclaration",
+                    "src": "344:26:2"
+                  },
+                  {
+                    "attributes": {
+                      "constant": false,
+                      "name": "_nSlot",
+                      "scope": 1268,
+                      "stateVariable": false,
+                      "storageLocation": "default",
+                      "type": "uint8",
+                      "value": null,
+                      "visibility": "internal"
+                    },
+                    "children": [
+                      {
+                        "attributes": {
+                          "name": "uint8",
+                          "type": "uint8"
+                        },
+                        "id": 1255,
+                        "name": "ElementaryTypeName",
+                        "src": "372:5:2"
+                      }
+                    ],
+                    "id": 1256,
+                    "name": "VariableDeclaration",
+                    "src": "372:12:2"
+                  },
+                  {
+                    "attributes": {
+                      "constant": false,
+                      "name": "price",
+                      "scope": 1268,
+                      "stateVariable": false,
+                      "storageLocation": "default",
+                      "type": "uint8",
+                      "value": null,
+                      "visibility": "internal"
+                    },
+                    "children": [
+                      {
+                        "attributes": {
+                          "name": "uint8",
+                          "type": "uint8"
+                        },
+                        "id": 1257,
+                        "name": "ElementaryTypeName",
+                        "src": "386:5:2"
+                      }
+                    ],
+                    "id": 1258,
+                    "name": "VariableDeclaration",
+                    "src": "386:11:2"
+                  },
+                  {
+                    "attributes": {
+                      "constant": false,
+                      "name": "startTime",
+                      "scope": 1268,
+                      "stateVariable": false,
+                      "storageLocation": "default",
+                      "type": "uint256",
+                      "value": null,
+                      "visibility": "internal"
+                    },
+                    "children": [
+                      {
+                        "attributes": {
+                          "name": "uint256",
+                          "type": "uint256"
+                        },
+                        "id": 1259,
+                        "name": "ElementaryTypeName",
+                        "src": "399:7:2"
+                      }
+                    ],
+                    "id": 1260,
+                    "name": "VariableDeclaration",
+                    "src": "399:17:2"
+                  },
+                  {
+                    "attributes": {
+                      "constant": false,
+                      "name": "_conflictOwner",
+                      "scope": 1268,
+                      "stateVariable": false,
+                      "storageLocation": "default",
+                      "type": "address payable",
+                      "value": null,
+                      "visibility": "internal"
+                    },
+                    "children": [
+                      {
+                        "attributes": {
+                          "name": "address",
+                          "stateMutability": "payable",
+                          "type": "address payable"
+                        },
+                        "id": 1261,
+                        "name": "ElementaryTypeName",
+                        "src": "417:15:2"
+                      }
+                    ],
+                    "id": 1262,
+                    "name": "VariableDeclaration",
+                    "src": "417:30:2"
+                  },
+                  {
+                    "attributes": {
+                      "constant": false,
+                      "name": "_modeConflict",
+                      "scope": 1268,
+                      "stateVariable": false,
+                      "storageLocation": "default",
+                      "type": "enum CarpoolingFactory.ModeConflict",
+                      "value": null,
+                      "visibility": "internal"
+                    },
+                    "children": [
+                      {
+                        "attributes": {
+                          "contractScope": null,
+                          "name": "ModeConflict",
+                          "referencedDeclaration": 1241,
+                          "type": "enum CarpoolingFactory.ModeConflict"
+                        },
+                        "id": 1263,
+                        "name": "UserDefinedTypeName",
+                        "src": "449:12:2"
+                      }
+                    ],
+                    "id": 1264,
+                    "name": "VariableDeclaration",
+                    "src": "449:26:2"
+                  }
+                ],
+                "id": 1265,
+                "name": "ParameterList",
+                "src": "320:156:2"
+              },
+              {
+                "attributes": {
+                  "parameters": [
+                    null
+                  ]
+                },
+                "children": [],
+                "id": 1266,
+                "name": "ParameterList",
+                "src": "484:0:2"
+              },
+              {
+                "attributes": {
+                  "statements": [
+                    null
+                  ]
+                },
+                "children": [],
+                "id": 1267,
+                "name": "Block",
+                "src": "484:141:2"
+              }
+            ],
+            "id": 1268,
+            "name": "FunctionDefinition",
+            "src": "295:330:2"
+          }
+        ],
+        "id": 1269,
+        "name": "ContractDefinition",
+        "src": "87:540:2"
+      }
+    ],
+    "id": 1270,
+    "name": "SourceUnit",
+    "src": "32:595:2"
+  },
+  "compiler": {
+    "name": "solc",
+    "version": "0.5.16+commit.9c3226ce.Emscripten.clang"
+  },
+  "networks": {},
+  "schemaVersion": "3.4.3",
+  "updatedAt": "2021-11-19T12:31:33.876Z",
+  "devdoc": {
+    "methods": {}
+  },
+  "userdoc": {
+    "methods": {}
+  }
+}
