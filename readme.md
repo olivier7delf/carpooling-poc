@@ -12,21 +12,8 @@ It is related to a main idea describe in (TODO link with medium).
 
 ## ) Global architecture and
 
-<object data="/carpooling-readme-1.pdf" type="application/pdf" width="100%"> 
-
-
-<image src="/carpooling-readme-1.pdf"/>
-
-![some discription](/carpooling-readme-1.pdf "some discription")
-
-kk
+Smart contract architecture
 ![This is an image](/archi.png)
-
-
-<a href="/carpooling-readme-1.pdf" class="image fit"><img src="/carpooling-readme-1.pdf" alt=""></a>
-
-[embed]"./carpooling-readme-1.pdf"[embed]
-
 
 
 ## 1) Description of the smart contract
