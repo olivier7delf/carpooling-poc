@@ -1,11 +1,5 @@
-// const Migrations = artifacts.require("Migrations");
+const CarpoolingFactory = artifacts.require("CarpoolingFactory");
 
-// module.exports = function(deployer) {
-//   deployer.deploy(Migrations);
-// };
-
-const ConvertLib = artifacts.require("ConvertLib");
-
-module.exports = function(deployer) {
-  // deployer.deploy(ConvertLib);
+module.exports = async function(deployer) {
+  await deployer.deploy(CarpoolingFactory);
 };
