@@ -21,12 +21,6 @@ contract CreatingCarpooling is metaVariables {
     uint8 public nValid;
 
     ModeConflict public carpoolingModeConflict;
-    
-    // TODO review it: is it needed ? especially for conflict
-    // can be used by third party (as Carpooling website), 
-    // ex: A allows Carpooling.com to withdraw the price, then A retrieve it form Carpooling.com.
-    // in the mean time, A used insurrance.com in case of accident, after everyone has validating the carpooling, insurrance.com can withdraw 1€ from A
-    mapping(address => mapping (address => uint256)) public allowances;
 
     struct Booking{
         uint8 nSlotBooked;

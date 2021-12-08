@@ -18,7 +18,7 @@ contract ManagingServices is BookingCarpooling {
     event ValidateService(address user, address service, bool validation);
 
     // ---> Services - User
-    //  The passenger/creator asks to add the service paying msg.value, or he cancels the ask
+    //  The passenger/creator asks to add the service paying msg.value, or he cancels the ask and he is refunded
     function askService(address service, bool cancel) payable public {
         require(msg.value >= 0, "price service must be >= 0");
 
