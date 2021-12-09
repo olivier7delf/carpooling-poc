@@ -26,6 +26,7 @@ contract Carpooling is ManagingCarpooling {
 
     // Withdraw token from "amountRefunded" to an other account
     function withdrawalRefund(address payable to) payable public {
+        // in VF: add restriction to conflictOwner: he should not be able to withdraw. Not done yet because sometime, owner = conflictOwner...
         require(bookings[msg.sender].amountRefunded > 0, "you don't have anything to be refund !");
 
         to.transfer(bookings[msg.sender].amountRefunded);
@@ -36,6 +37,7 @@ contract Carpooling is ManagingCarpooling {
 
     // Useful for the conflictOwner, to send token (amountRefunded) to another one in the contract
     function transfer(address to, uint tokens) external returns (bool success){
+        // in VF: add restriction to conflictOwner to avoid issues...
         require(bookings[msg.sender].amountRefunded >= tokens, "you have not enough tokens");
         
         bookings[msg.sender].amountRefunded -= tokens;
