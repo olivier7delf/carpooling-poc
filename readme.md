@@ -82,9 +82,13 @@ Then you can run the tests:
 
 ### b- Use functionality
 You can deploy it on a blockchain using truffle or remix: https://remix-ide.readthedocs.io/en/latest/create_deploy.html
+
 Deploy on dev network: Mumbai
+
 >truffle deploy --network maticmumbai 
+
 Deploy on main network:
+
 >truffle deploy --network maticmainnet
 
 **Create a carpoolingFactory:**
