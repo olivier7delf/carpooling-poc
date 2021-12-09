@@ -21,7 +21,7 @@ contract('CarpoolingFactory and Carpooling', function(accounts) {
   var origin = "nantes";
   var destination = "bordeaux";
   var nSlot = 3;
-  var price = 20; // TODO, use BN. about 20€ in wei, Polygon
+  var price = 20; // TODO, use BN... about 20€ =~ 10 * 10**18 wei in Matic, Polygon
   var priceService1 = 1;
   var priceService2 = 2;
   var delay = 3*24*3600; // carpooling is in 3 days
