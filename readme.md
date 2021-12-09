@@ -101,6 +101,9 @@ Admin of carpoolingFactory (instance) can validate or not these services.
 Through carpoolingFactory, drivers create carpooling (child contract) using the function "createCarpooling" between two cities.
 (gas used: 4,007,441; cost ~0.27€)
 
+Input, e.g: "Nantes","Bordeaux",3,20,1636830368,0xC39F595D9ad5b208988674B7c502e0f5c69a32Ab,0 
+(Caution, the price should be put in wei)
+
 Users can :
 - Book a carpooling using "makeBooking" with the number of seats desired and pay the right amount. (cost ~0.01€)
 - Ask to add a service, as id check or insurance. They are not coded.
