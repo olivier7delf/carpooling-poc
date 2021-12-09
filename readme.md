@@ -111,7 +111,7 @@ The funds are locked on the smart contract.
 
 Then, we assume the services are listening to carpoolingFactory, to get notified if they have a pending request from users.
 They have to answer it by validating or not the request. 
-We assume in the design that to subscribe to it, we just need to register its address and lock the amount of token needed.
+We assume in the design that to subscribe to it, we just need to register its address and lock the amount of tokens needed.
 
 After that, anyone can call "validateBooking" and the passenger request is now accepted or he is refunded.
 
@@ -126,6 +126,6 @@ The driver and services can withdraw their payment in tokens.
 TODO:
 - Find collaborators and contacts third parties: list their main needs
 - Refactor the code:
- - Change the architecture into a single smart contract, it will reduce the cost to create a new carpooling from 0.38€ to ~0.02€. 
- - It should allow to create an itinary with more than 2 cities...
+  - Change the architecture into a single smart contract, it will reduce the cost to create a new carpooling from 0.38€ to ~0.02€. 
+  - It should allow to create an itinary with more than 2 cities...
 - Review the security of the code, optimization and do an audit
