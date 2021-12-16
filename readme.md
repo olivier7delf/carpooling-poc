@@ -24,7 +24,7 @@ Tech:
 It is a small Proof of Concept (POC) to validate the feasibility of decentralized carpooling on a technical aspect.
 The main idea is to keep things simple and flexible so that other services can interact with them, which facilitates innovation.
 
-It is related to a wider idea described in https://medium.com/@Olivier-Delfosse/how-to-unleash-carpooling-potential-decentralization-f1db8b308d2d, in the article, we assume an other architecture to lower cost describe in "4. Next steps".
+It is related to a wider idea described in https://medium.com/@Olivier-Delfosse/how-to-unleash-carpooling-potential-decentralization-f1db8b308d2d, in the article, we assume another architecture to lower-cost described in "4. Next steps".
 
 The carpooling apps can:
 - Share their offers and use others
