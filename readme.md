@@ -3,6 +3,7 @@
 Carpooling is quite expensive (overcharged +30%) and has not innovated a lot for years because there is a monopoly.
 
 This project proposes a solution to avoid it using Polygon's blockchain, with smart contract (Solidity) tested (Truffle).
+(Here is the web interface using Web3 and ruby: https://github.com/olivier7delf/carpooling-ror)
 
 Tech: 
 - Solidity - 0.5.16 (solc-js)
