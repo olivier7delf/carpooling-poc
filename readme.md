@@ -1,10 +1,16 @@
 # Decentralized Capooling with Solidity on Polygon
 
-Carpooling is currently quite expensive (overcharged +30%) and has not innovated a lot for years because there is a monopoly.
+Carpooling is quite expensive (overcharged +30%) and has not innovated a lot for years because there is a monopoly.
 
-This project aims to propose a solution to avoid it using blockchain.
+This project proposes a solution to avoid it using Polygon's blockchain, with smart contract (Solidity) tested (Truffle).
 
-Recent improvements make blockchain an interesting solution, it is fast, cheap, scalable, low energy consumption, and with a consequent ecosystem.
+Tech: 
+- Solidity - 0.5.16 (solc-js)
+- Truffle v5.4.18 (core: 5.4.18)
+- Node v14.18.0
+- Web3.js v1.5.3
+- Ganache app
+- yarn 1.22.13
 
 ## Contents
 1. Project description
@@ -16,9 +22,8 @@ Recent improvements make blockchain an interesting solution, it is fast, cheap, 
 
 It is a small Proof of Concept (POC) to validate the feasibility of decentralized carpooling on a technical aspect.
 The main idea is to keep things simple and flexible so that other services can interact with them, which facilitates innovation.
-It is a minimalist version, to make it usable, it would require collaboration with third party's apps to answer with precision to the needs.
 
-It is related to a wider idea described in (TODO link with medium), in the article, we assume an other other another architecture to lower cost describe in "4. Next steps".
+It is related to a wider idea described in https://medium.com/@Olivier-Delfosse/how-to-unleash-carpooling-potential-decentralization-f1db8b308d2d, in the article, we assume an other architecture to lower cost describe in "4. Next steps".
 
 The carpooling apps can:
 - Share their offers and use others
@@ -67,11 +72,6 @@ But it would limit the openness of the solution.
 
 ### a- Edit and test the contracts
 To edit the contract, or test it localy, it requires:
-- Solidity - 0.5.16 (solc-js)
-- Truffle v5.4.18 (core: 5.4.18)
-- Node v14.18.0
-- Web3.js v1.5.3
-- Ganache app
 - npm: ganache-time-traveler, @truffle/hdwallet-provider
 
 **Run tests:**
@@ -80,12 +80,17 @@ Start Ganache, make sure you have the right configurations that match between Ga
 Then you can run the tests:
 >truffle test ./test/carpooling.js
 
-### b- Use functionality
+**Deploy**
+
 You can deploy it on a blockchain using truffle or remix: https://remix-ide.readthedocs.io/en/latest/create_deploy.html
+
 Deploy on dev network: Mumbai
 >truffle deploy --network maticmumbai 
+
 Deploy on main network:
 >truffle deploy --network maticmainnet
+
+### b- Functionalities overview
 
 **Create a carpoolingFactory:**
 
