@@ -13,6 +13,8 @@ Tech:
 - Ganache app
 - yarn 1.22.13
 
+(My others Blockchain projects: https://github.com/olivier7delf/Blockchain-content-table)
+
 ## Contents
 1. Project description
 2. Architecture and business model
